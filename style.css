@@ -4,7 +4,7 @@ body {
 
 .calc-buttons {
     display: grid;
-]}
+}
 
 button {
     font-size: 2em;
@@ -20,7 +20,7 @@ button {
     width: 107px;
 }
 
-p {
+.display > p {
     font-size: 3em;
     text-align: right;
     width: 220px;
@@ -32,10 +32,21 @@ p {
     margin-left: 2px;
 }
 
+.prev-calc > p {
+    font-size: 1em;
+    text-align: right;
+    width: 220px;
+    height: 20px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+    
+}
+
 .calculator {
     background-color:white;
     border: 2px solid black;
-    padding: 3px;
+    padding: 10px;
     width: 228px;
     margin: auto;
 }
