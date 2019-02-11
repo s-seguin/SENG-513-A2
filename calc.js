@@ -38,6 +38,8 @@ function btnClick(btn) {
         case EXPRESSION:
             if (isOperator(btn) && isOperator(getLastCharDisplay("display")))
                 replaceLastCharDisplay("display", btn);
+            else if (btn == "." && displayContains("display","."))
+                console.log("Expression already contains '.'");
             else
                 appendToDisplay("display", btn);
             break;
@@ -87,7 +89,7 @@ function evalExpression() {
  */
 function clearLastEntry() {
     let entry = document.getElementById("display").innerText;
-    if (entry.length == 1)
+    if (entry.length == 1 || getDisplayState() == ANS)
         document.getElementById("display").innerText = "0";
     else
         document.getElementById("display").innerText = entry.slice(0, entry.length -1);
@@ -121,6 +123,12 @@ function appendToDisplay(displayID, str) {
     document.getElementById(displayID).innerText += str;
 }
 
+function displayContains(displayID, chr) {
+    if ((document.getElementById(displayID).innerText).includes(chr))
+        return true;
+    else 
+        return false;
+}
 /**
  * Sets the inner text of the display to the given str
  * @param {*} displayID id of the display we want to modify
