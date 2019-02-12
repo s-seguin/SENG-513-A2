@@ -59,6 +59,11 @@ button {
     padding: 10px;
 }
 
+@media screen and (max-width: 600px) {
+    .calculator {
+        width: auto;
+    }
+}
 html, body {
     font-family: "Lato", sans-serif;
 }
