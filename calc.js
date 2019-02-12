@@ -123,6 +123,11 @@ function appendToDisplay(displayID, str) {
     document.getElementById(displayID).innerText += str;
 }
 
+/**
+ * Checks if the display contains the given character
+ * @param {*} displayID 
+ * @param {*} chr 
+ */
 function displayContains(displayID, chr) {
     if ((document.getElementById(displayID).innerText).includes(chr))
         return true;
