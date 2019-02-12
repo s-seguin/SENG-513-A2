@@ -37,6 +37,9 @@ button {
     background-color: white;
     border: 2px solid #CBCBCB;
     margin: 5px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .prev-calc > p {
@@ -47,7 +50,8 @@ button {
     margin: 5px;
     padding-right: 2px;
     padding-left: 2px;
-    
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .calculator {
