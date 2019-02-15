@@ -1,0 +1,12 @@
+Stuart Seguin, UCID: 10149541
+
+URL: https://s-seguin.github.io/SENG-513-A2/index.html 
+
+Tested on:  -Chrome Desktop and Responsive mode,
+            -Safari Desktop and Responsive mode, 
+            -Safari iOS - iPhone 8 Plus, 
+            -Firefox Desktop and Responsive mode
+
+Instructions: Navigate to URL above. Calculator is ready to use.
+
+Please note: styling was inspired by Google Calculator.
