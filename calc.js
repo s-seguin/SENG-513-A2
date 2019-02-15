@@ -12,8 +12,8 @@ const ERROR = "ERROR";
  * @param {*} btn the calling button
  */
 function btnClick(btn) {
-    console.log(getDisplayState());
-    console.log(previousAns);
+    console.log("display state: " + getDisplayState());
+    console.log("prev ans: " + previousAns);
     switch (getDisplayState()) {
         case CLEAR:
             if (btn != ")") {
@@ -91,10 +91,12 @@ function evalExpression() {
  */
 function clearLastEntry() {
     let entry = document.getElementById("display").innerText;
-    if (entry.length == 1 || getDisplayState() == ANS)
+    if (entry.length == 1 || getDisplayState() == ANS) {
         document.getElementById("display").innerText = "0";
-    else
+        previousAns = null;
+    } else {
         document.getElementById("display").innerText = entry.slice(0, entry.length -1);
+    }
 }
 
 /**
