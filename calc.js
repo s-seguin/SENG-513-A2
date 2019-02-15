@@ -17,7 +17,9 @@ function btnClick(btn) {
     switch (getDisplayState()) {
         case CLEAR:
             if (btn != ")") {
-                if (isOperator(btn))
+                if (btn == "-") //allow users to enter negative numbers
+                    setDisplayTo("display", btn);
+                else if (isOperator(btn)) //hitting an operator will -> 0[opr]
                     appendToDisplay("display", btn);
                 else
                     setDisplayTo("display", btn);
@@ -38,8 +40,8 @@ function btnClick(btn) {
         case EXPRESSION:
             if (isOperator(btn) && isOperator(getLastCharDisplay("display")))
                 replaceLastCharDisplay("display", btn);
-            else if (btn == "." && displayContains("display","."))
-                console.log("Expression already contains '.'");
+            else if ((btn == "." && currentNumberContains("display",".")) || (btn == ")" && currentNumberContains("display",")")))
+                console.log("Expression already contains '" + btn + "'");
             else
                 appendToDisplay("display", btn);
             break;
@@ -47,7 +49,7 @@ function btnClick(btn) {
         case ERROR:
             if (btn != ")") {
                 if (isOperator(btn))
-                    appendToDisplay("display", btn);
+                    setDisplayTo("display", "0" + btn);
                 else
                     setDisplayTo("display", btn);
                 break;
@@ -124,12 +126,15 @@ function appendToDisplay(displayID, str) {
 }
 
 /**
- * Checks if the display contains the given character
+ * Checks if the last number entered into the calculator contains the given character
  * @param {*} displayID 
  * @param {*} chr 
  */
-function displayContains(displayID, chr) {
-    if ((document.getElementById(displayID).innerText).includes(chr))
+function currentNumberContains(displayID, chr) {
+    let display = document.getElementById(displayID).innerText;
+    let splitStr = display.split(/(\+|\-|\*|\/)/g);
+
+    if (splitStr[splitStr.length-1].includes(chr))
         return true;
     else 
         return false;
