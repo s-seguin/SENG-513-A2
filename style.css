@@ -1,13 +1,15 @@
 
 .calc-buttons {
-    width: auto;
-    height: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 5px;
     grid-row-gap: 5px;
-    margin: 5px;
+}
 
+.calc-buttons-container {
+    width: auto;
+    height: auto;
+    margin: 5px;
 }
 
 button {
